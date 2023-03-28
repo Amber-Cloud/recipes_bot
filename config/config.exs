@@ -49,6 +49,14 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Telegram Bot API Wrapper Nadia
+config :nadia,
+  recv_timeout: 10
+
+config :recipes_bot, spoonacular_api_key: System.get_env("SPOONACULAR_API_KEY")
+config :nadia, token: System.get_env("TELEGRAM_HTTP_API_KEY")
+config :recipes_bot, telegram_bot_name: "TELEGRAM_BOT_NAME"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

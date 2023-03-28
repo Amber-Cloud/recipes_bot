@@ -16,7 +16,8 @@ defmodule RecipesBot.SpoonacularClient.Model.SearchRecipes200ResponseResultsInne
     :fat,
     :image,
     :imageType,
-    :protein
+    :protein,
+    :spoonacularSourceUrl
   ]
 
   @type t :: %__MODULE__{
@@ -27,7 +28,8 @@ defmodule RecipesBot.SpoonacularClient.Model.SearchRecipes200ResponseResultsInne
           :fat => String.t(),
           :image => String.t(),
           :imageType => String.t(),
-          :protein => String.t()
+          :protein => String.t(),
+          :spoonacularSourceUrl => String.t()
         }
 end
 

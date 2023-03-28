@@ -1,2 +1,5 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(RecipesBot.Repo, :manual)
+alias RecipesBot.Recipes
+
+# Ecto.Adapters.SQL.Sandbox.mode(RecipesBot.Repo, :manual)
+Hammox.defmock(RecipesImplMock, for: Recipes)

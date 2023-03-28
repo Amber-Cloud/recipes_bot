@@ -32,7 +32,7 @@ defmodule RecipesBotWeb.ConnCase do
   end
 
   setup tags do
-    RecipesBot.DataCase.setup_sandbox(tags)
+    #    RecipesBot.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

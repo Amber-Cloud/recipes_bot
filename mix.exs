@@ -7,7 +7,7 @@ defmodule RecipesBot.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -50,7 +50,9 @@ defmodule RecipesBot.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:poison, "~> 3.0"},
-      {:tesla, "~> 1.4"}
+      {:tesla, "~> 1.4"},
+      {:hammox, "~> 0.7", only: :test},
+      {:nadia, "~> 0.7.0"}
     ]
   end
 
@@ -65,7 +67,7 @@ defmodule RecipesBot.MixProject do
       setup: ["deps.get", "ecto.setup"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      #      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
   end

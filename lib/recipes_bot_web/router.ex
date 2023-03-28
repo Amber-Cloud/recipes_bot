@@ -17,7 +17,7 @@ defmodule RecipesBotWeb.Router do
   scope "/", RecipesBotWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/get_random_recipes", RecipesController, :get_random_recipes
   end
 
   # Other scopes may use custom stacks.
