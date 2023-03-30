@@ -35,7 +35,8 @@ defmodule RecipesBot.Application do
 
     bot_children = [
       Telegram.Poller,
-      Telegram.Matcher
+      Telegram.Matcher,
+      Telegram.BotStateTracker
     ]
 
     children =
