@@ -6,12 +6,12 @@ defmodule Telegram.BotStateTracker do
     GenServer.start_link(__MODULE__, init_arg, name: StateTracker)
   end
 
-  def update_state(user_id, command) do
-    GenServer.call(StateTracker, {:update_state, %{user_id => command}})
-  end
-
   def get_state(user_id) do
     GenServer.call(StateTracker, {:get_state, user_id})
+  end
+
+  def update_state(user_id, command) do
+    GenServer.call(StateTracker, {:update_state, %{user_id => command}})
   end
 
   def reset_state(user_id) do
@@ -26,16 +26,16 @@ defmodule Telegram.BotStateTracker do
   end
 
   @impl GenServer
-  def handle_call({:update_state, new_state}, _from, state) do
-    {:reply, :new_state_added, Map.merge(state, new_state)}
-  end
-
   def handle_call({:get_state, user_id}, _from, state) do
     if state[user_id] do
       {:reply, state[user_id], state}
     else
       {:reply, :none, state}
     end
+  end
+
+  def handle_call({:update_state, new_state}, _from, state) do
+    {:reply, :new_state_added, Map.merge(state, new_state)}
   end
 
   def handle_call({:reset_state, user_id}, _from, state) do

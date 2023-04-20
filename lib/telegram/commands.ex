@@ -7,6 +7,7 @@ defmodule Telegram.Commands do
 
   command("start") do
     Logger.log(:info, "Command /start received")
+    IO.inspect(update)
 
     send_message("Hello, " <> update.message.from.username <> "\nWhat would you like to find?",
       reply_markup: %{

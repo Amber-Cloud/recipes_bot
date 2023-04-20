@@ -89,6 +89,21 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ssl_verify_fun" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/idna" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/metrics" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/parse_trans" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/mimerl" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/certifi" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/metrics" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/idna" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/hackney" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/nadia" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/httpoison" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/unicode_util_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/ssl_verify_fun" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/exactor" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/exvcr" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/meck" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/jsx" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/exjsx" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="phoenix" level="project" />
@@ -180,5 +195,10 @@
     <orderEntry type="library" name="httpoison" level="project" />
     <orderEntry type="library" name="exvcr" level="project" />
     <orderEntry type="library" name="mimic" level="project" />
+    <orderEntry type="library" name="meck" level="project" />
+    <orderEntry type="library" name="exactor" level="project" />
+    <orderEntry type="library" name="httpotion" level="project" />
+    <orderEntry type="library" name="http_server" level="project" />
+    <orderEntry type="library" name="jsx" level="project" />
   </component>
 </module>

@@ -15,8 +15,7 @@ defmodule RecipesBot.Recipes.Impl do
          {:ok, recipe_full} <- Recipes.get_recipe_information(conn, recipe.id) do
       do_form_recipe_info(recipe_full)
     else
-      {:error, _} -> {:error, "Random recipe request failed"}
-      err -> {:error, err}
+      _err -> {:error, "Random recipe request failed"}
     end
   end
 
@@ -30,8 +29,7 @@ defmodule RecipesBot.Recipes.Impl do
          {:ok, recipe_full} <- Recipes.get_recipe_information(conn, recipe.id) do
       do_form_recipe_info(recipe_full)
     else
-      {:error, _} -> {:error, "Recipe request by name failed"}
-      err -> {:error, err}
+      _err -> {:error, "Recipe request by name failed"}
     end
   end
 
@@ -44,8 +42,7 @@ defmodule RecipesBot.Recipes.Impl do
          {:ok, recipe_full} <- Recipes.get_recipe_information(conn, recipe.id) do
       do_form_recipe_info(recipe_full)
     else
-      {:error, _} -> {:error, "Recipe request by ingredients failed"}
-      err -> {:error, err}
+      _err -> {:error, "Recipe request by ingredients failed"}
     end
   end
 

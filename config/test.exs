@@ -13,22 +13,11 @@ config :recipes_bot, RecipesBot.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
-# We don't run a server during test. If one is required,
-# you can enable the server option below.
-config :recipes_bot, RecipesBotWeb.Endpoint,
-  http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "Ljmf62BMLXgjQ+zVh+uiWN3BN+/XJQURKSC5uWlX7mvwi+7K0egGTURIazIZgut0",
-  server: false
-
-# In test we don't send emails.
-config :recipes_bot, RecipesBot.Mailer, adapter: Swoosh.Adapters.Test
-
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Initialize plugs at runtime for faster test compilation
-config :phoenix, :plug_init_mode, :runtime
 
 config :tesla, adapter: Tesla.Mock
 
 config :recipes_bot, recipes_impl: RecipesImplMock
+
+config :nadia, token: "token"

@@ -10,6 +10,7 @@ defmodule Telegram.Router do
 
       def match_message(message) do
         try do
+#          IO.inspect(unquote(message))
           apply(__MODULE__, :do_match_message, [message])
         rescue
           err in FunctionClauseError ->
@@ -25,6 +26,7 @@ defmodule Telegram.Router do
   def generate_message_matcher(handler) do
     quote do
       def do_match_message(var!(update)) do
+        IO.inspect(var!(update))
         handle_message(unquote(handler), [var!(update)])
       end
     end

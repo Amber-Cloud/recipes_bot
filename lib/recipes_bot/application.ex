@@ -21,16 +21,7 @@ defmodule RecipesBot.Application do
     end
 
     children = [
-      # Start the Ecto repository
-      # RecipesBot.Repo,
-      # Start the Telemetry supervisor
-      RecipesBotWeb.Telemetry,
-      # Start the PubSub system
-      {Phoenix.PubSub, name: RecipesBot.PubSub},
-      # Start the Endpoint (http/https)
-      RecipesBotWeb.Endpoint
-      # Start a worker by calling: RecipesBot.Worker.start_link(arg)
-      # {RecipesBot.Worker, arg}
+    #add Repo, etc. if using here
     ]
 
     bot_children = [
@@ -40,8 +31,10 @@ defmodule RecipesBot.Application do
     ]
 
     children =
-      if telegram_bot_name do
+      if telegram_bot_name && Mix.env != :test do
         children ++ bot_children
+      else
+        children
       end
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -50,11 +43,4 @@ defmodule RecipesBot.Application do
     Supervisor.start_link(children, opts)
   end
 
-  # Tell Phoenix to update the endpoint configuration
-  # whenever the application is updated.
-  @impl true
-  def config_change(changed, _new, removed) do
-    RecipesBotWeb.Endpoint.config_change(changed, removed)
-    :ok
-  end
 end
