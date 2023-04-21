@@ -29,4 +29,8 @@ if config_env() == :prod do
     config :spoonacular_api, base_url: env
   end
 
+  config :recipes_bot, spoonacular_api_key: System.get_env("SPOONACULAR_API_KEY")
+  config :nadia, token: System.get_env("NADIA_TOKEN")
+  config :recipes_bot, telegram_bot_name: System.get_env("TELEGRAM_BOT_NAME")
+
 end
