@@ -9,21 +9,6 @@ import Config
 
 
 if config_env() == :prod do
-  database_url =
-    System.get_env("DATABASE_URL") ||
-      raise """
-      environment variable DATABASE_URL is missing.
-      For example: ecto://USER:PASS@HOST/DATABASE
-      """
-
-  maybe_ipv6 = if System.get_env("ECTO_IPV6"), do: [:inet6], else: []
-
-  config :recipes_bot, RecipesBot.Repo,
-    # ssl: true,
-    url: database_url,
-    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-    socket_options: maybe_ipv6
-
 
   if env = System.get_env("SPOONACULAR_API_BASE_URI") do
     config :spoonacular_api, base_url: env
@@ -32,5 +17,6 @@ if config_env() == :prod do
   config :recipes_bot, spoonacular_api_key: System.get_env("SPOONACULAR_API_KEY")
   config :nadia, token: System.get_env("NADIA_TOKEN")
   config :recipes_bot, telegram_bot_name: System.get_env("TELEGRAM_BOT_NAME")
+
 
 end
