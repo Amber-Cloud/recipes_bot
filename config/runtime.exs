@@ -11,7 +11,7 @@ import Config
 if config_env() == :prod do
 
   if env = System.get_env("SPOONACULAR_API_BASE_URI") do
-    config :spoonacular_api, base_url: env
+    config :recipes_bot, spoonacular_base_url: env
   end
 
   config :recipes_bot, spoonacular_api_key: System.get_env("SPOONACULAR_API_KEY")
